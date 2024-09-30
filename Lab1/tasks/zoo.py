@@ -44,5 +44,5 @@ print(get_animal_index_pretty(ultra_zoo, 'lion') , get_animal_index_pretty(ultra
 def solve():
     print(new_animal(['lion', 'kangaroo', 'elephant', 'monkey', ], 1, 'bear'))
     print(new_animals(['lion', 'kangaroo', 'elephant', 'monkey', ], ['rooster', 'ostrich', 'lark', ]))
-    print(free_the_beast(['lion', 'kangaroo', 'elephant', 'monkey', ], 'elephant'))
+    print(kill_the_beast(['lion', 'kangaroo', 'elephant', 'monkey', ], 'elephant'))
     print(get_animal_index_pretty(ultra_zoo, 'lion'), get_animal_index_pretty(ultra_zoo, 'lark'))

@@ -41,3 +41,5 @@ def get_family_height(my_family_h):
 
 print(get_family_height(my_family_height))
 
+def solve():
+    return get_father_height(my_family_height), get_family_height(my_family_height)

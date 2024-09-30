@@ -44,9 +44,6 @@ def find_min_prices(shops):
     return sweets
 
 
-sweets = find_min_prices(shops)
-
-for sweet, details in sweets.items():
-    print(f"{sweet}:")
-    for detail in details:
-        print(f"  Магазин: {detail['shop']}, Цена: {detail['price']}")
+def solve():
+    return find_min_prices(shops)
+        

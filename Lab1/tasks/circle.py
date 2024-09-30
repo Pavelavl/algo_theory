@@ -38,6 +38,9 @@ point_2 = (30, 30)
 
 print(point_in_circle(point_2, 42))
 
+def solve():
+    return point_in_circle(point_1, 42), point_in_circle(point_2, 42)
+
 # Пример вывода на консоль:
 #
 # 77777.7777

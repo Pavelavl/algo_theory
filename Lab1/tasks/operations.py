@@ -36,11 +36,11 @@ def find_expression(numbers, target):
 
     return None
 
-numbers = [1, 2, 3, 4, 5]
-target = 25
-result = find_expression(numbers, target)
 
-if result:
-    print(f"expression found: {result} = {target}")
-else:
-    print(f"no expression for target = {target}")
+
+def solve():
+    numbers = [1, 2, 3, 4, 5]
+    target = 25
+    result = find_expression(numbers, target)
+
+    return f"expression found: {result} = {target}" if result else f"no expression for target = {target}"

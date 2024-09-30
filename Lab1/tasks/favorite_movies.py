@@ -28,4 +28,5 @@ def search_films(my_favorite_movies: str):
     second_last = my_favorite_movies[pos[-3] + 2:pos[-2]]
     return f"{first}\n{last}\n{second}\n{second_last}"
 
-print(search_films(my_favorite_movies))
+def solve(): 
+    return search_films(my_favorite_movies)

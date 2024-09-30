@@ -39,4 +39,5 @@ def encode(msg: [str]):
         + msg[3][12:6:-1] + " "
         + msg[4][20:15:-1])
 
-print(encode(secret_message))
+def solve(): 
+    return encode(secret_message)

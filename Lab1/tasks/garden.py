@@ -48,3 +48,6 @@ print(", ".join(u_garden_flowers))
 u_meadow_flowers = get_unique_set_elem(meadow_set, garden_set)
 
 print(", ".join(u_meadow_flowers))
+
+def solve(): 
+    return ", ".join(all_flowers)+"\n"+", ".join(gm_flowers)+"\n"+", ".join(u_garden_flowers)+"\n"+", ".join(u_meadow_flowers)
