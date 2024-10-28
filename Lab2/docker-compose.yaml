@@ -27,3 +27,4 @@ services:
       - ./reports:/app/reports
     depends_on:
       - app
+    command: pytest --disable-warnings --maxfail=1
