@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      target: app
+    image: electronic-library
+    container_name: electronic-library
+    ports:
+      - "8081:8081"
+    volumes:
+      - ./data:/app/data
+      - ./reports:/app/reports
+    restart: unless-stopped
+
+  test:
+    build:
+      context: .
+      target: test
+    image: electronic-library-test
+    container_name: electronic-library-test
+    environment:
+      - DATABASE_PATH=/app/data/library_test.db
+    volumes:
+      - ./data:/app/data
+      - ./reports:/app/reports
+    depends_on:
+      - app
