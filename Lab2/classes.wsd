@@ -1,0 +1,52 @@
+@startuml
+
+class Book {
+    - title: str
+    - author: str
+    - _pages: int
+    + pages: int
+    + get_page_count(): int
+    + __str__(): str
+    + __lt__(other): bool
+    + __eq__(other): bool
+}
+
+class Reader {
+    - _name: str
+    - reader_id: int
+    - read_books: List[Book]
+    + name: str
+    + read_book(book: Book): void
+    + total_pages_read(): int
+    + __str__(): str
+    + __eq__(other): bool
+    + __len__(): int
+}
+
+abstract class Subscription {
+    - reader: Reader
+    - _max_pages: int
+    + max_pages: int
+    + calculate_statistics(): dict
+    + __str__(): str
+    + __repr__(): str
+}
+
+class FreeSubscription {
+    + calculate_statistics(): dict
+    + __str__(): str
+    + __repr__(): str
+}
+
+class PaidSubscription {
+    + calculate_statistics(): dict
+    + __str__(): str
+    + __repr__(): str
+}
+
+Subscription <|-- FreeSubscription
+Subscription <|-- PaidSubscription
+Reader "1" *-- "many" Book
+Subscription "1" *-- "1" Reader
+
+@enduml
