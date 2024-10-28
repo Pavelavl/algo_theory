@@ -55,85 +55,85 @@ docker-compose up --build -d
 ### 1. Добавление читателя
 #### **POST /add_reader/**
 
-- Создает нового читателя в базе данных.
-
-#### **Тело запроса:**
-```json
-{
- "name": "Имя читателя"
-}
-```
-#### **Пример запроса:**
-```curl -X POST "http://localhost:8000/add_reader/" -H "Content-Type: application/json" -d "{\"name\": \"John Doe\"}"```
-
-#### **Ответ:**
-```json
-{
- "message": "Reader John Doe added"
-}
-```
+> _Создает нового читателя в базе данных._
+> 
+> #### **Тело запроса:**
+> ```json
+> {
+>  "name": "Имя читателя"
+> }
+> ```
+> #### **Пример запроса:**
+> ```curl -X POST "http://localhost:8000/add_reader/" -H > "Content-Type: application/json" -d "{\"name\": \"John Doe\"}"```
+> 
+> #### **Ответ:**
+> ```json
+> {
+>  "message": "Reader John Doe added"
+> }
+> ```
 
 ### 2. Добавление книги
-#### **POST /add_book/**
-
-- Добавляет новую книгу в базу данных.
-
-#### **Тело запроса:**
-```json
-{
- "title": "Название книги",
- "author": "Автор книги",
- "pages": 300,
- "reader_id": 1
-}
-```
-
-#### **Пример запроса:**
-```curl -X POST "http://localhost:8081/add_book/" -H "Content-Type: application/json" -d "{\"title\": \"Test Book\", \"author\": \"Test Author\", \"pages\": 300, \"reader_id\": 1}"```
-
-#### **Ответ:**
-```json
-{
-  "message": "Book Test Book by Test Author added"
-}
-```
+> #### **POST /add_book/**
+> 
+> _Добавляет новую книгу в базу данных._
+> 
+> #### **Тело запроса:**
+> ```json
+> {
+>  "title": "Название книги",
+>  "author": "Автор книги",
+>  "pages": 300,
+>  "reader_id": 1
+> }
+> ```
+> 
+> #### **Пример запроса:**
+> ```curl -X POST "http://localhost:8081/add_book/" -H > "Content-Type: application/json" -d "{\"title\": \"Test Book\", > \"author\": \"Test Author\", \"pages\": 300, \"reader_id\": 1}> "```
+> 
+> #### **Ответ:**
+> ```json
+> {
+>   "message": "Book Test Book by Test Author added"
+> }
+> ```
 
 
 ### 3. Расчет статистики
-#### **GET /calculate_statistics/**
-
-- Рассчитывает количество прочитанных страниц для читателя и оставшиеся страницы в рамках абонемента.
-
-#### **Параметры запроса:**
-- reader_id (int): ID читателя.
-- subscription_type (string): Тип абонемента (Free или Paid).
-- max_pages (int, optional): Максимальное количество страниц для Free абонемента.
-
-#### **Пример запроса:**
-```curl -X GET "http://localhost:8000/calculate_statistics/?reader_id=1&subscription_type=Free&max_pages=200"```
-
-#### **Ответ (для Free абонемента):**
-```json
-{
- "total_pages_read": 100,
- "remaining_pages": 100,
- "subscription_type": "Free"
-}
-```
+> #### **GET /calculate_statistics/**
+> 
+> _Рассчитывает количество прочитанных страниц для читателя и > оставшиеся страницы в рамках абонемента._
+> 
+> #### **Параметры запроса:**
+> - reader_id (int): ID читателя.
+> - subscription_type (string): Тип абонемента (Free или Paid).
+> - max_pages (int, optional): Максимальное количество страниц для > Free абонемента.
+> 
+> #### **Пример запроса:**
+> ```curl -X GET "http://localhost:8000/calculate_statistics/?> reader_id=1&subscription_type=Free&max_pages=200"```
+> 
+> #### **Ответ (для Free абонемента):**
+> ```json
+> {
+>  "total_pages_read": 100,
+>  "remaining_pages": 100,
+>  "subscription_type": "Free"
+> }
+> ```
 
 ### 4. Генерация отчета
 
-#### **GET /generate_report/**
-
-- Создает отчет о читателях в формате .docx или .xlsx.
-
-#### **Параметры запроса:**
-
-- format (string): Формат отчета (docx или xlsx).
-
-#### **Пример запроса**
-
-```curl -X GET "http://localhost:8000/generate_report/?format=docx" --output report.docx```
-
-Ответ: Отчет будет сохранен в указанном формате на вашем устройстве.
+> #### **GET /generate_report/**
+> 
+> _Создает отчет о читателях в формате .docx или .xlsx._
+> 
+> #### **Параметры запроса:**
+> 
+> - format (string): Формат отчета (docx или xlsx).
+> 
+> #### **Пример запроса**
+> 
+> ```curl -X GET "http://localhost:8000/generate_report/?> format=docx" --output report.docx```
+> 
+> Ответ: Отчет будет сохранен в указанном формате на вашем > устройстве.
 
