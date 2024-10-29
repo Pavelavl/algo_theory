@@ -1,0 +1,35 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+}
+
+#add-event-form {
+    margin-bottom: 20px;
+}
+
+#events-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#events-table th, #events-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#events-table th {
+    background-color: #f2f2f2;
+}
+
+#edit-event-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    z-index: 10;
+    display: none;
+}

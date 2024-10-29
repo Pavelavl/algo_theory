@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Manager</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <h1>Event Manager</h1>
+
+    <!-- Форма для добавления нового события -->
+    <div id="add-event-form">
+        <h3>Add New Event</h3>
+        <input type="text" id="name" placeholder="Event Name">
+        <input type="date" id="date" placeholder="Event Date">
+        <input type="text" id="location" placeholder="Location">
+        <textarea id="description" placeholder="Description"></textarea>
+        <button onclick="addEvent()">Add Event</button>
+    </div>
+
+    <!-- Таблица для отображения событий -->
+    <table id="events-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Date</th>
+                <th>Location</th>
+                <th>Description</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="events-body">
+            <!-- События будут добавлены сюда динамически -->
+        </tbody>
+    </table>
+
+    <!-- Модальное окно для редактирования события -->
+    <div id="edit-event-modal" style="display: none;">
+        <h3>Edit Event</h3>
+        <input type="text" id="edit-name" placeholder="Event Name">
+        <input type="date" id="edit-date" placeholder="Event Date">
+        <input type="text" id="edit-location" placeholder="Location">
+        <textarea id="edit-description" placeholder="Description"></textarea>
+        <button onclick="saveEditedEvent()">Save Changes</button>
+        <button onclick="closeEditModal()">Cancel</button>
+    </div>
+
+
+    <script src="/static/script.js"></script>
+</body>
+
+</html>
