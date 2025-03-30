@@ -1,0 +1,52 @@
+@startuml app
+skinparam style strictuml
+
+package "UI Layer" {
+    class MainWindow {
+        - task_selector: ComboBox
+        - execution_type: ComboBox
+        - size_input: LineEdit
+        - start_button: Button
+        - result_display: Label
+        + start_task(): void
+    }
+}
+
+package "Task1: Rectangle Area" {
+    class RectangleAreaTask {
+        + rectangle_area_generator(length_range: Tuple, width_range: Tuple, count: int): Generator
+        + parallel_rectangle_area_generator(count: int): List
+    }
+}
+
+package "Task2: Note Matrix" {
+    class NoteMatrixTask {
+        + note_list_generator(n: int): List
+        + generate_note_matrix(size: int): List
+        + parallel_note_matrix(size: int): List
+    }
+}
+
+package "Task3: Coin Values" {
+    class CoinValuesTask {
+        + find_common_even_values(coins1: str, coins2: str): List
+        + find_common_even_values_parallel(coins1: str, coins2: str): List
+    }
+}
+
+package "Utilities" {
+    class PerformanceTimer {
+        + measure_time(func: Callable, *args, **kwargs): float
+    }
+}
+
+MainWindow --> RectangleAreaTask : "Task 1"
+MainWindow --> NoteMatrixTask : "Task 2"
+MainWindow --> CoinValuesTask : "Task 3"
+MainWindow --> PerformanceTimer : "Time Measurement"
+
+RectangleAreaTask ..> PerformanceTimer : "Uses"
+NoteMatrixTask ..> PerformanceTimer : "Uses"
+CoinValuesTask ..> PerformanceTimer : "Uses"
+
+@enduml
