@@ -1,9 +1,9 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QGridLayout, QLineEdit, QPushButton, QLabel, QComboBox, QMessageBox, QFrame, QHBoxLayout
 from PyQt5.QtCore import Qt
-from sudoku_solver import solve_sudoku
+from algo.sudoku_solver import solve_sudoku
 
-class SudokuSolver(QMainWindow):
+class SudokuSolverWidget(QMainWindow):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Sudoku Solver")
@@ -295,6 +295,6 @@ class SudokuSolver(QMainWindow):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    window = SudokuSolver()
+    window = SudokuSolverWidget()
     window.show()
     sys.exit(app.exec_())

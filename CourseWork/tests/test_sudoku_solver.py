@@ -1,5 +1,5 @@
 import pytest
-from sudoku_solver import find_empty, is_valid, solve_sudoku
+from algo.sudoku_solver import find_empty, is_valid, solve_sudoku
 
 # Тестовые доски для 9x9
 @pytest.fixture
